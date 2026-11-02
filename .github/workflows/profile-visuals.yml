@@ -42,21 +42,21 @@ jobs:
       - name: Generate the activity graph from GitHub data
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/generate_activity.py --output dist/activity.svg
+        run: python3 scripts/generate_activity.py --output dist/activity.svg --mobile-output dist/activity-mobile.svg
 
       - name: Validate generated SVGs
         run: |
           python3 - <<'PY'
           import xml.etree.ElementTree as ET
           from pathlib import Path
-          for name in ('snake.svg', 'snake-dark.svg', 'activity.svg'):
+          for name in ('snake.svg', 'snake-dark.svg', 'activity.svg', 'activity-mobile.svg'):
               path = Path('dist') / name
               root = ET.parse(path).getroot()
               assert root.tag == '{http://www.w3.org/2000/svg}svg', name
               assert path.stat().st_size > 1000, name
               if name.startswith('snake'):
                   assert '@keyframes' in path.read_text(), name
-          print('All three generated SVGs are valid.')
+          print('All four generated SVGs are valid.')
           PY
 
       - name: Publish SVGs to the output branch
@@ -79,7 +79,8 @@ jobs:
           cp "$GITHUB_WORKSPACE/dist/snake.svg" .
           cp "$GITHUB_WORKSPACE/dist/snake-dark.svg" .
           cp "$GITHUB_WORKSPACE/dist/activity.svg" .
-          git add -- snake.svg snake-dark.svg activity.svg
+          cp "$GITHUB_WORKSPACE/dist/activity-mobile.svg" .
+          git add -- snake.svg snake-dark.svg activity.svg activity-mobile.svg
           if git diff --cached --quiet; then
             echo 'Generated visuals are unchanged.'
             exit 0
