@@ -1,9 +1,15 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="QuietNova — AI Engineer / Software Developer" width="100%" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="./assets/banner-mobile.svg" />
+    <img src="./assets/banner.svg" alt="QuietNova — AI Engineer / Software Developer" width="100%" />
+  </picture>
 </p>
 
 <p align="center">
-  <img src="./assets/typing.svg" alt="Building AI Applications · Exploring AI Agents · Engineering Intelligent Systems · Learning and Building Every Day" width="100%" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="./assets/typing-mobile.svg" />
+    <img src="./assets/typing.svg" alt="Building AI Applications · Exploring AI Agents · Engineering Intelligent Systems · Learning and Building Every Day" width="100%" />
+  </picture>
 </p>
 
 ## About Me
@@ -81,7 +87,10 @@ Technologies I've used or explored, and continue to learn.
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jack4code1/jack4code1/output/activity.svg" alt="jack4code1's daily GitHub contributions over the last 31 days" width="100%" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/jack4code1/jack4code1/output/activity-mobile.svg" />
+    <img src="https://raw.githubusercontent.com/jack4code1/jack4code1/output/activity.svg" alt="jack4code1's daily GitHub contributions over the last 31 days" width="100%" />
+  </picture>
 </p>
 
 <p align="center"><sub>Real GitHub activity. Language distribution reflects public code, not proficiency.</sub></p>

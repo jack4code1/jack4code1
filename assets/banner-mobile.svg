@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="270" viewBox="0 0 560 270" role="img" aria-labelledby="title description">
+  <title id="title">QuietNova — AI Engineer / Software Developer</title>
+  <desc id="description">A deep blue and violet horizon with a softly moving cyan point of light.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2=".8"><stop stop-color="#0d152b"/><stop offset=".55" stop-color="#171b3a"/><stop offset="1" stop-color="#292052"/></linearGradient>
+    <linearGradient id="name"><stop stop-color="#f1f5ff"/><stop offset=".65" stop-color="#c2cafa"/><stop offset="1" stop-color="#a9bcff"/></linearGradient>
+    <linearGradient id="line"><stop stop-color="#7aa2f7" stop-opacity="0"/><stop offset=".5" stop-color="#bb9af7" stop-opacity=".8"/><stop offset="1" stop-color="#7dcfff" stop-opacity=".15"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#7c73fa" stop-opacity=".17"/><stop offset="1" stop-color="#7c73fa" stop-opacity="0"/></radialGradient>
+    <clipPath id="bounds"><rect width="960" height="270" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#bounds)">
+    <rect width="960" height="270" fill="url(#background)"/>
+    <ellipse cx="800" cy="173" rx="280" ry="210" fill="url(#glow)"/>
+    <g fill="none" stroke="url(#line)" stroke-width="1">
+      <path d="M520 257C665 254 623 42 805 80S941 128 1045 12"/>
+      <path d="M502 276C678 264 635 57 813 95S946 145 1058 21" opacity=".65"/>
+      <path d="M487 294C691 275 646 75 823 111S954 161 1070 32" opacity=".4"/>
+      <path d="M580 254C690 182 826 272 973 171" opacity=".4"/>
+    </g>
+    <circle r="3" fill="#7dcfff"><animateMotion dur="12s" repeatCount="indefinite" path="M520 257C665 254 623 42 805 80S941 128 1045 12"/></circle>
+    <g fill="#b1bcf3" opacity=".45"><circle cx="744" cy="47" r="1.2"/><circle cx="895" cy="56" r="1"/><circle cx="868" cy="207" r="1"/><circle cx="688" cy="185" r="1"/></g>
+    <text x="47" y="51" font-family="Arial,Helvetica,sans-serif" font-size="11" letter-spacing="3" fill="#9ba9d3">HELLO, WORLD.</text>
+    <text x="42" y="137" font-family="Arial,Helvetica,sans-serif" font-size="66" font-weight="700" letter-spacing="-2.5" fill="url(#name)">QuietNova<tspan fill="#7dcfff">.</tspan></text>
+    <text x="47" y="177" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#b0bce3">AI Engineer / Software Developer</text>
+    <path d="M48 209H82" stroke="#7dcfff" stroke-width="2"/>
+    <text x="94" y="213" font-family="Arial,Helvetica,sans-serif" font-size="11" letter-spacing="1.7" fill="#8c9bc5">STAY CURIOUS. KEEP BUILDING.</text>
+    <text x="915" y="243" text-anchor="end" font-family="monospace" font-size="11" fill="#91a0cb">@jack4code1</text>
+  </g>
+</svg>
