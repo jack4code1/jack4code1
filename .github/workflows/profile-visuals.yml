@@ -1,0 +1,90 @@
+name: Update profile visuals
+
+on:
+  schedule:
+    - cron: '23 2 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/profile-visuals.yml'
+      - 'scripts/generate_activity.py'
+
+permissions: {}
+
+concurrency:
+  group: profile-visuals
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the profile source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Generate light and dark contribution snakes
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: jack4code1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/snake.svg?color_snake=#7c3aed&color_dots=#ebedf0,#c7d2fe,#a5b4fc,#818cf8,#6366f1
+            dist/snake-dark.svg?palette=github-dark&color_snake=#7dcfff&color_dots=#161b22,#242d52,#414c85,#737cce,#bb9af7
+
+      - name: Generate the activity graph from GitHub data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_activity.py --output dist/activity.svg
+
+      - name: Validate generated SVGs
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          for name in ('snake.svg', 'snake-dark.svg', 'activity.svg'):
+              path = Path('dist') / name
+              root = ET.parse(path).getroot()
+              assert root.tag == '{http://www.w3.org/2000/svg}svg', name
+              assert path.stat().st_size > 1000, name
+              if name.startswith('snake'):
+                  assert '@keyframes' in path.read_text(), name
+          print('All three generated SVGs are valid.')
+          PY
+
+      - name: Publish SVGs to the output branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh auth setup-git
+          publish_dir="$RUNNER_TEMP/quietnova-profile-output"
+          git init "$publish_dir"
+          cd "$publish_dir"
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads origin output > /dev/null; then
+            git fetch --depth=1 origin output
+            git checkout -b output FETCH_HEAD
+          else
+            git checkout --orphan output
+          fi
+          cp "$GITHUB_WORKSPACE/dist/snake.svg" .
+          cp "$GITHUB_WORKSPACE/dist/snake-dark.svg" .
+          cp "$GITHUB_WORKSPACE/dist/activity.svg" .
+          git add -- snake.svg snake-dark.svg activity.svg
+          if git diff --cached --quiet; then
+            echo 'Generated visuals are unchanged.'
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'chore: refresh contribution visuals'
+          git push origin HEAD:output
