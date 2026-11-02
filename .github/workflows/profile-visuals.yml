@@ -1,4 +1,4 @@
-name: Update profile visuals
+name: Update contribution snake
 
 on:
   schedule:
@@ -8,7 +8,6 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/profile-visuals.yml'
-      - 'scripts/generate_activity.py'
 
 permissions: {}
 
@@ -39,24 +38,18 @@ jobs:
             dist/snake.svg?color_snake=#7c3aed&color_dots=#ebedf0,#c7d2fe,#a5b4fc,#818cf8,#6366f1
             dist/snake-dark.svg?palette=github-dark&color_snake=#7dcfff&color_dots=#161b22,#242d52,#414c85,#737cce,#bb9af7
 
-      - name: Generate the activity graph from GitHub data
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/generate_activity.py --output dist/activity.svg --mobile-output dist/activity-mobile.svg
-
       - name: Validate generated SVGs
         run: |
           python3 - <<'PY'
           import xml.etree.ElementTree as ET
           from pathlib import Path
-          for name in ('snake.svg', 'snake-dark.svg', 'activity.svg', 'activity-mobile.svg'):
+          for name in ('snake.svg', 'snake-dark.svg'):
               path = Path('dist') / name
               root = ET.parse(path).getroot()
               assert root.tag == '{http://www.w3.org/2000/svg}svg', name
               assert path.stat().st_size > 1000, name
-              if name.startswith('snake'):
-                  assert '@keyframes' in path.read_text(), name
-          print('All four generated SVGs are valid.')
+              assert '@keyframes' in path.read_text(), name
+          print('Both contribution snake SVGs are valid.')
           PY
 
       - name: Publish SVGs to the output branch
@@ -78,9 +71,7 @@ jobs:
           fi
           cp "$GITHUB_WORKSPACE/dist/snake.svg" .
           cp "$GITHUB_WORKSPACE/dist/snake-dark.svg" .
-          cp "$GITHUB_WORKSPACE/dist/activity.svg" .
-          cp "$GITHUB_WORKSPACE/dist/activity-mobile.svg" .
-          git add -- snake.svg snake-dark.svg activity.svg activity-mobile.svg
+          git add -- snake.svg snake-dark.svg
           if git diff --cached --quiet; then
             echo 'Generated visuals are unchanged.'
             exit 0
