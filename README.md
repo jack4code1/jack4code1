@@ -5,23 +5,6 @@
   </picture>
 </p>
 
-<p align="center">
-  Hi, I'm Jack — also known as <strong>QuietNova</strong>.<br />
-  AI Engineer / Software Developer
-</p>
-
-<p align="center">
-  Exploring artificial intelligence and software engineering.<br />
-  Turning ideas into practical, reliable software.
-</p>
-
-<p align="center">
-  <sub>INTERESTS &amp; EXPLORATIONS</sub><br /><br />
-  <samp>AI Agents · LLM Applications · Training &amp; Fine-tuning<br />
-  Inference &amp; Optimization · AI Coding &amp; Developer Tools<br />
-  Backend Engineering · Software Architecture · Distributed Systems</samp>
-</p>
-
 <br />
 
 <picture>
