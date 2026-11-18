@@ -7,13 +7,17 @@
 
 <p align="center">
   <strong>你好，我是 QuietNova 👋</strong><br />
-  关注 AI 编程工具与后端工程，喜欢把想法做成可以运行、可以验证的项目。
+  河南大学研三 · 做过计算机视觉目标检测 · 关注 AI Agent 与大模型应用
 </p>
 
 <p align="center">
   <a href="https://github.com/jack4code1/mewcoder">MewCode</a> ·
   <a href="https://github.com/jack4code1/XG2JD">校园生活服务与营销平台</a>
 </p>
+
+## 关于我
+
+本科和硕士均就读于河南大学，目前研三。做过一些计算机视觉方向的目标检测工作；现在对 AI Agent、大模型工程和 AI 应用开发很感兴趣，喜欢通过实际项目学习和探索。
 
 ## 精选项目
 
@@ -25,9 +29,11 @@
 
 基于 **Java + Spring Boot** 的校园场景后端项目，涵盖店铺与商品查询、用户点评、优惠券秒杀和订单处理。使用 Redis Lua 完成抢券校验，并通过 RabbitMQ 处理异步订单与异常补偿。
 
-## 技术方向
+## 技术与兴趣
 
-`Python` · `Java` · `Spring Boot` · `Redis` · `RabbitMQ` · `Textual`
+- **计算机视觉：**目标检测
+- **AI 应用：**AI Agent、大模型工程、AI 编程工具
+- **项目技术：**Python、Java、Spring Boot、Redis、RabbitMQ、Textual
 
 ## GitHub 足迹
 
