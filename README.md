@@ -5,12 +5,36 @@
   </picture>
 </p>
 
-<br />
+<p align="center">
+  <strong>你好，我是 QuietNova 👋</strong><br />
+  关注 AI 编程工具与后端工程，喜欢把想法做成可以运行、可以验证的项目。
+</p>
+
+<p align="center">
+  <a href="https://github.com/jack4code1/mewcoder">MewCode</a> ·
+  <a href="https://github.com/jack4code1/XG2JD">校园生活服务与营销平台</a>
+</p>
+
+## 精选项目
+
+### [MewCode](https://github.com/jack4code1/mewcoder)
+
+基于 **Python + Textual** 的终端 AI 编程助手，将模型对话、项目上下文、文件与命令工具整合在一个终端界面中。支持多模型接入、会话恢复、工具审批与项目记忆。
+
+### [校园生活服务与营销平台](https://github.com/jack4code1/XG2JD)
+
+基于 **Java + Spring Boot** 的校园场景后端项目，涵盖店铺与商品查询、用户点评、优惠券秒杀和订单处理。使用 Redis Lua 完成抢券校验，并通过 RabbitMQ 处理异步订单与异常补偿。
+
+## 技术方向
+
+`Python` · `Java` · `Spring Boot` · `Redis` · `RabbitMQ` · `Textual`
+
+## GitHub 足迹
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jack4code1/jack4code1/output/snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jack4code1/jack4code1/output/snake.svg" />
-  <img src="https://raw.githubusercontent.com/jack4code1/jack4code1/output/snake.svg" alt="Animated snake following jack4code1's real GitHub contribution history" width="100%" />
+  <img src="https://raw.githubusercontent.com/jack4code1/jack4code1/output/snake.svg" alt="jack4code1 的 GitHub 贡献动画" width="100%" />
 </picture>
 
 <p align="center"><sub>Stay curious. Keep building. Never stop exploring.</sub></p>
