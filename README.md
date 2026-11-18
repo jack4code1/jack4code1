@@ -1,41 +1,27 @@
-## 你好 👋，我是 QuietNova
+<div align="center">
+  <h1>Hi, I'm QuietNova 👋</h1>
+  <p><strong>Third-year Master's Student at Henan University</strong></p>
+  <p>Computer Vision & Object Detection · AI Agents & LLM Applications</p>
+</div>
 
-### 个人简介
+## 🔭 About Me
 
-现为河南大学硕士研究生三年级，本科亦就读于河南大学。曾围绕深度学习目标检测开展计算机视觉相关实践。
+- 🎓 I completed my undergraduate studies at **Henan University** and am now in the third year of my master's degree there.
+- 🧠 My previous work includes deep learning-based object detection in computer vision.
+- 🛠️ I am interested in **AI agents**, **LLM engineering**, and **AI application development**.
 
-<br>
+## 🧰 Tech Stack
 
-## 研究与关注方向
+- **Languages:** `Python` · `Java`
+- **Application Development:** `Textual` · `Spring Boot`
+- **Data & Messaging:** `Redis` · `RabbitMQ`
 
-<table>
-  <tr>
-    <td valign="top" width="50%">
-      <strong>🔭 过往实践</strong>
-      <ul>
-        <li>计算机视觉</li>
-        <li>深度学习目标检测</li>
-      </ul>
-    </td>
-    <td valign="top" width="50%">
-      <strong>🌱 当前兴趣</strong>
-      <ul>
-        <li>AI Agent</li>
-        <li>大模型工程</li>
-        <li>AI 应用开发</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+## 📫 Connect with Me
 
-<br>
-
-## 语言与工具
-
-`Python` · `Java` · `Spring Boot` · `Redis` · `RabbitMQ`
-
-<br>
+[GitHub @jack4code1](https://github.com/jack4code1)
 
 ---
 
-<p align="center"><sub>保持好奇，持续探索。</sub></p>
+<div align="center">
+  <em>Stay curious. Keep building. Never stop exploring.</em>
+</div>
